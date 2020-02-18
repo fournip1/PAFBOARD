@@ -165,7 +165,7 @@ class paf_board(tkinter.Tk):
 # Ici on met en plance les elements du player
 
         # listbox contient la liste des morceaux du genre selectionne
-        self.listbox = tkinter.Listbox(self.player,selectmode=tkinter.SINGLE,width = 100,height = 50,background=self.player.cget('bg'),relief=tkinter.FLAT,bd=0)
+        self.listbox = tkinter.Listbox(self.player,selectmode=tkinter.SINGLE,width = 100,height = 30,background=self.player.cget('bg'),relief=tkinter.FLAT,bd=0)
         self.listbox.bind('<Double-Button>', self.OnListEnter)
         self.listbox.bind("<Return>", self.OnListEnter)
         self.listbox.grid(column=0, row=0, columnspan=6)
@@ -212,7 +212,7 @@ class paf_board(tkinter.Tk):
 
 
     def OnFileButtonClick(self):
-        self.dirpath = filedialog.askdirectory(title="Selectionner le répertoire de musique")
+        self.dirpath = filedialog.askdirectory(title="Selectionner le répertoire de musique",initialdir="~/Bureau")
         self.chemin.set(self.dirpath)
         if self.dirpath:
             self.genbutton['state']='normal'
